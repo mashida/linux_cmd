@@ -64,3 +64,19 @@ addkey() {
 ```bash
 addkey id_rsa
 ```
+
+### Пример
+```bash
+# Проверяем доступ до применения ключа
+root@host:~# ssh -T git@gitlab.com
+git@gitlab.com: Permission denied (publickey).
+
+# Загружаем ключ через функцию addkey
+root@host:~# addkey gitlab
+Identity added: /root/.ssh/gitlab (mashida@example.com)
+✔ Ключ 'gitlab' добавлен
+
+# Проверяем доступ уже с добавленным ключом
+root@host:~# ssh -T git@gitlab.com
+Welcome to GitLab, @mashida!
+```
