@@ -51,3 +51,16 @@ curl -sL https://raw.githubusercontent.com/mashida/linux_cmd/main/add_ssh_key.sh
 # Убедитесь, что ~/bin/ в PATH, и дальше:
 add_ssh_key.sh id_rsa
 ```
+
+## Добавить в `~/.bashrc`
+```bash
+addkey() {
+  [[ -z "$SSH_AUTH_SOCK" ]] && eval "$(ssh-agent -s)" >/dev/null
+  ssh-add "$HOME/.ssh/$1" && echo "✔ Ключ '$1' добавлен"
+}
+```
+
+### и использовать 
+```bash
+addkey id_rsa
+```
