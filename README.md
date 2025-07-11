@@ -39,7 +39,7 @@ ssh-add "$KEY" \
 ## Пример одиночного запуска
 ```bash
 eval "$(ssh-agent -s)"
-bash <(curl -sL https://raw.githubusercontent.com/mashida/linux_cmd/main/add_ssh_key.sh) id_rsa
+source <(curl -sL https://raw.githubusercontent.com/mashida/linux_cmd/main/add_ssh_key.sh) id_rsa
 ```
 
 ## Пример «установки» в `~/bin`
